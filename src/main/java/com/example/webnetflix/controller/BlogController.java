@@ -7,9 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import java.util.Optional;
 
 @RestController
-@CrossOrigin("*")
+// @CrossOrigin("*")
 @RequestMapping("/blog")
 public class BlogController {
     @Autowired
@@ -32,7 +33,7 @@ public class BlogController {
     @PostMapping()
     public ResponseEntity<Blog> addBlog(@RequestBody Blog blog){
         blogService.save(blog);
-        return new ResponseEntity<>(blog, HttpStatus.CREATED);
+        return new ResponseEntity<>( HttpStatus.CREATED);
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Blog> deleteBlog(@PathVariable Long id){

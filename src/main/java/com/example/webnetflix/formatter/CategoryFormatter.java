@@ -3,9 +3,12 @@ import com.example.webnetflix.model.Category;
 import com.example.webnetflix.service.category.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.Formatter;
+import org.springframework.stereotype.Component;
+
 import java.text.ParseException;
 import java.util.Locale;
 
+@Component
 public class CategoryFormatter implements Formatter<Category> {
     @Autowired
     private ICategoryService categoryService;
